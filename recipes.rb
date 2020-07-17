@@ -1,6 +1,6 @@
 require 'nokogiri'
 require 'open-uri'
-require 'pry'
+# require 'pry'
 
 
 class Recipes  
@@ -18,27 +18,33 @@ class Recipes
     metadata
   end
   
-end
-
-doc = Nokogiri::HTML(open("https://www.brandnewvegan.com/"))
-recipes = Recipes.list 
+  def self.get_recipe(url)
+    doc = Nokogiri::HTML(open(url))
+    recipes = Recipes.list 
   
-doc.search("#featured-post-3 article a").each do |r| 
-  url= Nokogiri::HTML(open(r['href']))
-  recipes[r['title']] = {url: r['href'],
-    meta: Recipes.metadata_to_hash(url.search(".tasty-recipes-details").text.strip.to_s), 
-    description: url.search(".tasty-recipes-description").text[11..],
-    ingredients: {code: url.search(".tasty-recipes-ingredients ul").to_s},
-    instructions: {code: url.search(".tasty-recipes-instructions ol").to_s},
-    notes: url.search(".tasty-recipes-notes").text[5..].strip,
-    keywords: url.search(".tasty-recipes-keywords").text[10..],
-  } unless r['title'].nil?
+    doc.search("#featured-post-3 article a").each do |r| 
+      url= Nokogiri::HTML(open(r['href']))
+      recipes[r['title']] = {url: r['href'],
+        meta: Recipes.metadata_to_hash(url.search(".tasty-recipes-details").text.strip.to_s), 
+        description: url.search(".tasty-recipes-description").text[11..],
+        ingredients: url.search(".tasty-recipes-ingredients ul"),
+        instructions: url.search(".tasty-recipes-instructions ol"),
+        notes: url.search(".tasty-recipes-notes").text[5..].strip,
+        keywords: url.search(".tasty-recipes-keywords").text[10..],
+      } unless r['title'].nil?
+    end
+    recipes
+  end
 end
 
 
 
 
-recipes
+# Get info from the print page rather than the actual recipe page
+# doc.css('a.wprm-recipe-print').attribute("href").value
+# doc1 = Nokogiri::HTML(open(doc.css('a.wprm-recipe-print').attribute("href").value))
+
+
 # binding.pry
 # recipe_url = "https://www.brandnewvegan.com/recipes/cheezy-hashbrown-casserole"
 # testdoc = Nokogiri::HTML(open(recipe_url))

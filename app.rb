@@ -6,17 +6,17 @@ get '/' do
   erb :index
 end
 
+get '/recipes' do
+  @title = "Recipes"
+  erb :recipes
+end
+
 get '/about' do
   @title = "About"
   erb :about
 end
 
-get '/palindrome' do
-  @title = "Palindrome Detector"
-  erb :palindrome
-end
-
-post '/check' do
-  @phrase = params[:phrase]
+post '/get_recipe' do
+  @recipe = params[:recipe]
   erb :result
 end
