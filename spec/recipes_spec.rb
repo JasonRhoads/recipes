@@ -35,7 +35,7 @@ RSpec.describe Recipes do
   it "Recipe description" do
     expect(recipe["Vegan Instant Pot Colcannon"][:description][0..9]).to eq "Here is my"
   end
-  it "makes a new Recipe object" do
+  it "Recipe url" do
     expect(recipe["Vegan Instant Pot Colcannon"][:url]).to eq "https://www.brandnewvegan.com/recipes/vegan-instant-pot-colcannon"
   end
   

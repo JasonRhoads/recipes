@@ -17,6 +17,7 @@ get '/about' do
 end
 
 post '/get_recipe' do
+  @title = "Recipes"
   @recipe = params[:recipe]
   erb :result
 end
