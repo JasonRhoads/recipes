@@ -18,6 +18,6 @@ end
 
 post '/get_recipe' do
   @title = "Recipes"
-  @recipe = params[:recipe]
+  @recipe_url = params[:recipe_url]
   erb :result
 end

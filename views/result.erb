@@ -1,24 +1,11 @@
+<!-- R.3efactor to remove model code and move to own class-->
 <div class="recipes">
   <h1>Recipe</h1>
-  <% Recipes.get_recipe(@recipe).each do |key,value| %>
-  <div>
-    <h2><%= key %></h2>
-    <p>URL: <a href="<%= value[:url] %>" taget="_blank"><%= key %></a></p>
-    <% value[:meta].each do |key,value| %>
-    <p><%= key %>: <%= value %></p>
-    <% end %>
-    
-    <p>Description: <%= value[:description] %></p>
-    <p>Ingredients:</p>
-    <%= value[:ingredients] %>
-    <p>Instructions:</p>
-    <%= value[:instructions] %>
-    <p>Notes: <%= value[:notes] %></p>
-    <p>Keywords: <%= value[:keywords] %></p>
-  </div>
+  <%= Recipes.get_recipe(@recipe_url) %>
+
   <hr>
-  <% end %>
   <h3>Try another one!</h2>
   
   <%= erb :recipes_form %>
 </div>
+

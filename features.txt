@@ -1,0 +1,15 @@
+--MVP--
+data structures users, recipes, books
+index page
+profile page
+recipe page
+book page
+pull recipe from generic url
+
+
+--Feature backlog--
+extra features that would be nice to add/cool ideas
+Family - users have-a family
+family sharing
+
+
