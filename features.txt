@@ -1,10 +1,20 @@
 --MVP--
-data structures users, recipes, books
-index page
-profile page
-recipe page
-book page
-pull recipe from generic url
+As a User, I can create a new account and sign in
+As a User, I can update my personal information
+As a User, I can delete my account
+
+Recipes
+As a User, I can create a new recipe
+As a User, I can edit a recipe
+As a User, I can delete a recipe
+As a User, I can share a recipe
+
+Books
+As a User, I can make a new recipe book
+As a User, I can add recipes to the book
+As a User, I can delete a book
+As a User, I can share a book
+
 
 
 --Feature backlog--
@@ -12,4 +22,7 @@ extra features that would be nice to add/cool ideas
 Family - users have-a family
 family sharing
 
-
+Import
+As a User, I can import existing recipes from urls
+As a User, I can import existing recipes from csv
+As a User, I can import existing recipes from pdf
