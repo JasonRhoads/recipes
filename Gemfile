@@ -10,7 +10,7 @@ group :test do
   gem 'csv'
   gem 'minitest',           '5.11.3'
   gem 'minitest-reporters', '1.2.0'
-  gem 'nokogiri',           '1.10.8'
+  gem 'nokogiri',           '1.13.2'
   gem 'rack-test',          '1.0.0'
   gem 'rake',               '12.3.3'
   gem 'sqlite3'
