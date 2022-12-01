@@ -2,7 +2,9 @@ GEM
   remote: https://rubygems.org/
   specs:
     ansi (1.5.0)
+    bcrypt (3.1.18)
     builder (3.2.4)
+    csv (3.2.5)
     ffi (1.13.1)
     jasonrhoads_palindrome (0.2.1)
     listen (3.2.1)
@@ -15,12 +17,12 @@ GEM
       builder
       minitest (>= 5.0)
       ruby-progressbar
-    mustermann (1.1.1)
+    mustermann (2.0.2)
       ruby2_keywords (~> 0.0.1)
     nokogiri (1.10.8)
       mini_portile2 (~> 2.4.0)
-    rack (2.2.3)
-    rack-protection (2.0.3)
+    rack (2.2.4)
+    rack-protection (2.2.3)
       rack
     rack-test (1.0.0)
       rack (>= 1.0, < 3)
@@ -31,18 +33,22 @@ GEM
     rerun (0.13.0)
       listen (~> 3.0)
     ruby-progressbar (1.10.1)
-    ruby2_keywords (0.0.2)
-    sinatra (2.0.3)
-      mustermann (~> 1.0)
-      rack (~> 2.0)
-      rack-protection (= 2.0.3)
+    ruby2_keywords (0.0.5)
+    sequel (5.62.0)
+    sinatra (2.2.3)
+      mustermann (~> 2.0)
+      rack (~> 2.2)
+      rack-protection (= 2.2.3)
       tilt (~> 2.0)
-    tilt (2.0.10)
+    sqlite3 (1.4.4)
+    tilt (2.0.11)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  bcrypt
+  csv
   jasonrhoads_palindrome (= 0.2.1)
   minitest (= 5.11.3)
   minitest-reporters (= 1.2.0)
@@ -50,7 +56,9 @@ DEPENDENCIES
   rack-test (= 1.0.0)
   rake (= 12.3.3)
   rerun (= 0.13.0)
-  sinatra (= 2.0.3)
+  sequel
+  sinatra (= 2.2.3)
+  sqlite3
 
 BUNDLED WITH
    1.17.3
